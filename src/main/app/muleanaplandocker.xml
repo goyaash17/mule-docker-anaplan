@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:mulesoft-anaplan-v2-connector="http://www.mulesoft.org/schema/mule/mulesoft-anaplan-v2-connector" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/mulesoft-anaplan-v2-connector http://www.mulesoft.org/schema/mule/mulesoft-anaplan-v2-connector/current/mule-mulesoft-anaplan-v2-connector.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8090" doc:name="HTTP Listener Configuration"/>
+    <flow name="muleanaplandockerFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/previewimportdatasource" doc:name="HTTP"/>
+        <logger message="Preview Import Data Source Flow Started Successfully" level="INFO" doc:name="Logger"/>
+        <set-payload value="{&quot;columnCount&quot;:0,&quot;dataTypes&quot;:null,&quot;delimiter&quot;:null,&quot;encoding&quot;:null,&quot;exportFormat&quot;:null,&quot;headerNames&quot;:null,&quot;listNames&quot;:null,&quot;rowCount&quot;:0,&quot;separator&quot;:null,&quot;name&quot;:&quot;Employee Planning from Employee Planning.csv&quot;,&quot;type&quot;:&quot;FILE&quot;,&quot;source&quot;:{&quot;textEncoding&quot;:&quot;ISO-8859-1&quot;,&quot;columnSeparator&quot;:&quot;,&quot;,&quot;textDelimiter&quot;:&quot;\&quot;&quot;,&quot;headerRow&quot;:1,&quot;firstDataRow&quot;:6,&quot;decimalSeparator&quot;:&quot;.&quot;,&quot;headerNames&quot;:[&quot;Employee&quot;,&quot;Line Items&quot;,&quot;Jan 17&quot;,&quot;Feb 17&quot;,&quot;Mar 17&quot;,&quot;Q1 FY17&quot;,&quot;Apr 17&quot;,&quot;May 17&quot;,&quot;Jun 17&quot;,&quot;Q2 FY17&quot;,&quot;Jul 17&quot;,&quot;Aug 17&quot;,&quot;Sep 17&quot;,&quot;Q3 FY17&quot;,&quot;Oct 17&quot;,&quot;Nov 17&quot;,&quot;Dec 17&quot;,&quot;Q4 FY17&quot;,&quot;FY17&quot;],&quot;columnCount&quot;:19}}" doc:name="Set Payload"/>
+        <logger message="Preview Import Data Source Flow Completed Successfully" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

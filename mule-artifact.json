@@ -1,0 +1,20 @@
+{
+  "configs": [
+    "muleanaplandocker.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "muleanaplandocker",
+  "minMuleVersion": "3.8.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedResources": []
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
